@@ -14,7 +14,7 @@
                         <ul>
                             <li>导航一</li>
                             <li>导航二</li>
-                            <li>头像1</li>
+                            <li> <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" /></li>
                         </ul>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
             }
         }
         .pc-head{
-            max-width:1200px;
+            max-width:1000px;
             margin:0 auto;
             display: flex;
             justify-content: space-between;

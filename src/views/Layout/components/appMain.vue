@@ -1,20 +1,26 @@
 <template>
     <main class="pc-main">
-        <aside>左</aside>
+        <aside>
+            <left-aside></left-aside>
+        </aside>
         <section>
             <div>
-                <Card :bordered="false" v-for="(v,k) in msgList" :key="k">
+                <Card class="pc-main-blog" :bordered="false" v-for="(v,k) in msgList" :key="k">
                     <p slot="title">{{v.title}}{{k}}</p>
                     <p style="text-align:justify">{{v.msg}}</p>
                 </Card>
             </div>
             <Button type="success" long>加载更多</Button>
         </section>
-        <aside>右</aside>
+        <aside>
+            <right-aside></right-aside>
+        </aside>
     </main>
 </template>
 
 <script>
+    import leftAside from './leftAside'
+    import rightAside from './rightAside'
     export default {
         name: "app-main",
         data() {
@@ -55,6 +61,10 @@
                 ]
             }
         },
+        components: {
+            leftAside,
+            rightAside
+        },
         methods: {
         }
     }
@@ -69,21 +79,20 @@
         width:250px;
     }
     section{
-        overflow-y: auto;
-    }
-}
-@media screen and (min-width: 1200px) {
-    .pc-main{
-        section{
-            width:1200px;
+        max-width:1000px;
+        flex:1;
+        margin:0 5px;
+        & .pc-main-blog{
+            margin-bottom:10px;
+            cursor:pointer;
         }
     }
 }
+
 @media screen and (max-width: 1200px) {
     .pc-main{
         section{
             flex:2;
-            padding:0 20px;
         }
 
     }
