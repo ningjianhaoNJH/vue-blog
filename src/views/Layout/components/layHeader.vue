@@ -1,0 +1,81 @@
+<template>
+    <header>
+        <Row>
+            <Col :xs="24" :sm="0" :md="0" :lg="0">
+                <div  class="mobile-head">
+                    <img :src="logImg" alt="avatar" class="avatar">
+                    <Icon type="md-menu" size="50" color="#fff" @click="drawerFlag = true"/>
+                </div>
+            </Col>
+            <Col :sm="24" :xs="0" :md="24" :lg="24">
+                <div class="pc-head">
+                    <div class="pc-head-search"><Input search enter-button placeholder="输入博客文章" class="pc-head-search-input"/></div>
+                    <div class="pc-head-nav">
+                        <ul>
+                            <li>导航一</li>
+                            <li>导航二</li>
+                            <li>头像1</li>
+                        </ul>
+                    </div>
+                </div>
+            </Col>
+        </Row>
+        <Drawer title="Basic Drawer" placement="left" :closable="false" v-model="drawerFlag">
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+        </Drawer>
+    </header>
+</template>
+
+<script>
+    import logImg from '../../../images/logo.png'
+    export default {
+        name: "layHeader",
+        data() {
+            return {
+                logImg: logImg,
+                drawerFlag: false
+            }
+        }
+    }
+</script>
+
+<style  lang="less" scoped>
+    header{
+        .mobile-head{
+            display: flex;
+            justify-content: space-between;
+            padding:8px 25px;
+            .avatar{
+                width:45px;
+                height:45px;
+                position: relative;
+            }
+        }
+        .pc-head{
+            max-width:1200px;
+            margin:0 auto;
+            display: flex;
+            justify-content: space-between;
+            line-height: 66px;
+            .pc-head-search{
+                line-height: 66px;
+                .pc-head-search-input{
+                    top:17px;
+                }
+            }
+            .pc-head-nav{
+                & li{
+                    display: inline-block;
+                }
+            }
+        }
+
+    }
+    @media screen and (max-width: 1200px) {
+        .pc-head{
+           padding:0 20px;
+        }
+    }
+</style>
