@@ -104,22 +104,6 @@
             </div>
 
         </Card>
-        <Card class="left-aside-classification">
-            <div slot="title">个人分类</div>
-            <div class="left-aside-classification-item">
-                <span>Content of card</span>
-                <span>1</span>
-            </div>
-            <div class="left-aside-classification-item">
-                <span>Content of card</span>
-                <span>1</span>
-            </div>
-            <div class="left-aside-classification-item">
-                <span>Content of card</span>
-                <span>1</span>
-            </div>
-
-        </Card>
     </div>
 </template>
 

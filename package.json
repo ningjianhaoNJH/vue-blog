@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
-    "iview": "^3.0.0",
+    "iview": "^3.1.5",
     "js-cookie": "^2.2.0",
     "vue": "^2.5.16",
     "vue-router": "^2.8.1",
@@ -46,7 +46,7 @@
     "vue-style-loader": "^1.0.0",
     "vue-template-compiler": "^2.2.1",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1",
+    "webpack-dev-server": "^2.11.3",
     "webpack-merge": "^3.0.0"
   },
   "bugs": {

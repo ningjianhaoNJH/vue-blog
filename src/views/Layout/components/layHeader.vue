@@ -31,7 +31,7 @@
 <script>
     import logImg from '../../../images/logo.png'
     export default {
-        name: "layHeader",
+        name: "lay-header",
         data() {
             return {
                 logImg: logImg,

@@ -1,3 +1,3 @@
-export { default as layoutHeader } from './layHeader'
-export { default as AppMain } from './AppMain'
-export { default as layoutFooter } from './layoutFooter'
+export { default as layoutHeader } from './layHeader.vue'
+export { default as AppMain } from './appMain.vue'
+export { default as layoutFooter } from './layoutFooter.vue'
