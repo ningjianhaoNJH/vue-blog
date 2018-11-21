@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div slot="bottom" class="aside-split-pane">
-                Bottom Pane
+                作者其他博客
             </div>
         </Split>
     </div>

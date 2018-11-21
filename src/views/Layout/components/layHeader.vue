@@ -12,8 +12,8 @@
                     <div class="pc-head-search"><Input search enter-button placeholder="输入博客文章" class="pc-head-search-input"/></div>
                     <div class="pc-head-nav">
                         <ul>
-                            <li>导航一</li>
-                            <li>导航二</li>
+                            <li>写博客</li>
+                            <li>登录注册</li>
                             <li> <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" /></li>
                         </ul>
                     </div>

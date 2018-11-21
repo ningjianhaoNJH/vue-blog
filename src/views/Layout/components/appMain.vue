@@ -4,7 +4,7 @@
             <left-aside></left-aside>
         </aside>
         <section>
-            <transition name="fade">
+            <transition name="fade" mode="out-in">
                 <router-view></router-view>
             </transition>
         </section>
@@ -41,6 +41,8 @@
         max-width:1000px;
         flex:1;
         margin:0 5px;
+        background:#fff;
+        padding-bottom:16px;
     }
 }
 
