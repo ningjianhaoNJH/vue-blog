@@ -12,8 +12,13 @@
                     <div class="pc-head-search"><Input search enter-button placeholder="输入博客文章" class="pc-head-search-input"/></div>
                     <div class="pc-head-nav">
                         <ul>
-                            <li>写博客</li>
-                            <li>登录注册</li>
+                            <li>
+                                <span @click="$router.push('/write')">写博客</span>
+                            </li>
+                            <li>
+                                <span>登录</span>
+                                <span>注册</span>
+                            </li>
                             <li> <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" /></li>
                         </ul>
                     </div>
@@ -68,6 +73,12 @@
             .pc-head-nav{
                 & li{
                     display: inline-block;
+                    color:#fff;
+                    & span{
+                        font-size:16px;
+                        padding:3px 5px;
+                        cursor: pointer;
+                    }
                 }
             }
         }

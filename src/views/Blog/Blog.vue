@@ -1,7 +1,10 @@
 <template>
   <div class="blog">
     <div class="blog-title">
-      <h3>标题</h3>
+      <h3>
+        <span>标题 </span>
+        <Button @click="$router.go(-1)" style="float:right;background-color:#808695;color:#fff;" size="small" icon="md-close"></Button>
+      </h3>
       <p class="blog-title-info">
         <span>发布时间：2018年11月21日 15:32:21</span>
         <a href="#">李潮水</a>

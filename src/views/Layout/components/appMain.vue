@@ -9,7 +9,8 @@
             </transition>
         </section>
         <aside>
-            <right-aside></right-aside>
+            <right-aside v-if="$route.path === '/blog'"></right-aside>
+            <right-aside2 v-else></right-aside2>
         </aside>
     </main>
 </template>
@@ -17,12 +18,14 @@
 <script>
     import leftAside from './leftAside'
     import rightAside from './rightAside'
+    import rightAside2 from './rightAside2'
     export default {
         name: "app-main",
         
         components: {
             leftAside,
-            rightAside
+            rightAside,
+            rightAside2
         },
         methods: {
         }

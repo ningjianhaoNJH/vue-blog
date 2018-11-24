@@ -1,14 +1,14 @@
 <template>
   <div class="write">
     <div class="write-title">
-      <h3>标题</h3>
-      <p class="write-title-info">
-        <span>发布时间：2018年11月21日 15:32:21</span>
-        <a href="#">李潮水</a>
-        <i>阅读数: 3232</i>
-        <span>标签:</span><b>宅男</b><b>Golang</b></p>
+      <Row>
+        <Col span="20"><Input v-model="blogTitle" placeholder="输入博客标题"  /></Col>
+        <Col span="4">
+          <Button @click="$router.go(-1)" style="float:right;background-color:#808695;color:#fff;" size="small" icon="md-close"></Button>
+        </Col>
+      </Row>
     </div>
-    <div>
+    <div class="editor-container">
       <div id="toolbar-container"></div>
       <div id="editor"></div>
     </div>
@@ -26,7 +26,8 @@
     },
     data() {
       return {
-        editor: null
+        editor: null,
+        blogTitle: ''
       };
     },
     mounted() {
@@ -36,6 +37,7 @@
       initCKEditor() {
         CKEditor.create(document.querySelector('#editor'), {
           language: 'zh-cn',
+          height: 800
         }).then(editor => {
           const toolbarContainer = document.querySelector('#toolbar-container');
           toolbarContainer.appendChild(editor.ui.view.toolbar.element);
@@ -77,6 +79,14 @@
           padding:2px 4px;
           font-size:14px;
         }
+      }
+    }
+    .editor-container{
+      padding:15px;
+      #editor{
+        margin-top:15px;
+        border: 1px solid #e8eaec;
+        height:500px;
       }
     }
   }

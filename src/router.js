@@ -2,7 +2,7 @@ const routers = [
     {
         path: '/',
         hidden: true,
-        redirect: 'blog',
+        redirect: 'home',
         meta: {
             title: ''
         },
