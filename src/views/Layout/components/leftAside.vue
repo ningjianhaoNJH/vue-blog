@@ -43,73 +43,132 @@
         </Card>
         <Card class="left-aside-hot" >
             <div slot="title">热门文章</div>
-            <div class="left-aside-hot-item">
-                <span>Content of card</span>
-                <p>阅读量123</p>
+            <div v-for="(v,k) in hotArticle" :key="k" v-if="k <= 4 || typeFlag" class="left-aside-hot-item">
+                <span>{{v.context}}</span>
+                <p>阅读量{{v.count}}</p>
             </div>
-            <div class="left-aside-hot-item">
-                <span>Content of card</span>
-                <p>阅读量123</p>
-            </div>
-            <div class="left-aside-hot-item">
-                <span>Content of card</span>
-                <p>阅读量123</p>
-            </div>
-            <div class="left-aside-hot-item">
-                <span>Content of card</span>
-                <p>阅读量123</p>
-            </div>
-            <div class="left-aside-hot-item">
-                <span>Content of card</span>
-                <p>阅读量123</p>
-            </div>
-
+            <Button style="margin-top:10px;" long @click="articleFlag = true" v-show="!articleFlag && hotArticle.length>4">展开</Button>
         </Card>
         <Card class="left-aside-classification">
             <div slot="title">归档</div>
-            <div class="left-aside-classification-item">
+            <div v-for="(v,k) in archiveList" :key="k" v-if="k <= 4 || archiveFlag" class="left-aside-classification-item">
                 <span>2018年1月</span>
                 <p>1篇</p>
             </div>
-            <div class="left-aside-classification-item">
-                <span>2018年2月</span>
-                <p>1篇</p>
-            </div>
-            <div class="left-aside-classification-item">
-                <span>2018年3月</span>
-                <p>1篇</p>
-            </div>
-            <div class="left-aside-classification-item">
-                <span>2018年3月</span>
-                <p>1篇</p>
-            </div>
-            <div class="left-aside-classification-item">
-                <span>2018年3月</span>
-                <p>1篇</p>
-            </div>
+            <Button style="margin-top:10px;" long @click="archiveFlag = true" v-show="!archiveFlag && archiveList.length>4">展开</Button>
         </Card>
         <Card class="left-aside-classification">
             <div slot="title">个人分类</div>
-            <div class="left-aside-classification-item">
-                <span>Content of card</span>
-                <span>1</span>
+            <div v-for="(v,k) in typeList" :key="k" v-if="k <= 4 || typeFlag" class="left-aside-classification-item">
+                <span>{{v.name}}</span>
+                <span>{{v.count}}篇</span>
             </div>
-            <div class="left-aside-classification-item">
-                <span>Content of card</span>
-                <span>1</span>
-            </div>
-            <div class="left-aside-classification-item">
-                <span>Content of card</span>
-                <span>1</span>
-            </div>
-
+            <Button style="margin-top:10px;" long @click="typeFlag = true" v-show="!typeFlag && typeList.length>4">展开</Button>
         </Card>
     </div>
 </template>
 
 <script>
     export default {
-        name: "left-aside"
+        name: "left-aside",
+        data() {
+          return {
+            archiveList: [
+              {
+                dateRange: '2018年11月',
+                count: 132
+              },
+              {
+                dateRange: '2018年12月',
+                count: 152
+              },
+              {
+                dateRange: '2018年1月',
+                count: 122
+              },
+              {
+                dateRange: '2018年2月',
+                count: 13
+              },
+              {
+                dateRange: '2018年5月',
+                count: 11
+              },
+              {
+                dateRange: '2018年6月',
+                count: 12
+              },
+              {
+                dateRange: '2018年7月',
+                count: 13
+              }
+            ],
+            typeList: [
+              {
+                name: 'node.js',
+                count: 11
+              },
+              {
+                name: 'Linux',
+                count: 12
+              },
+              {
+                name: 'docker',
+                count: 13
+              },
+              {
+                name: 'nginx',
+                count: 14
+              },
+              {
+                name: 'Ethereum',
+                count: 15
+              },
+              {
+                name: 'BitCoin',
+                count: 16
+              },
+              {
+                name: 'Golang',
+                count: 17
+              }
+              
+            ],
+            archiveFlag: false,
+            typeFlag: false,
+            hotArticle: [
+              {
+                context: 'Content of card',
+                count:232
+              },
+              {
+                context: 'Content of card',
+                count:232
+              },
+              {
+                context: 'Content of card',
+                count:232
+              },
+              {
+                context: 'Content of card',
+                count:232
+              },
+              {
+                context: 'Content of card',
+                count:232
+              },
+              {
+                context: 'Content of card',
+                count:232
+              },
+              {
+                context: 'Content of card',
+                count:232
+              }
+            ],
+            articleFlag: false,
+          }
+        }
     }
 </script>
 
@@ -135,9 +194,10 @@
                 padding:2px 0;
                 display: flex;
                 justify-content: space-between;
-                & span{
+                cursor: pointer;
+                & span:first-child{
                     color:#2d8cf0;
-                    cursor: pointer;
+                    
                 }
             }
         }

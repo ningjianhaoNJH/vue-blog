@@ -16,8 +16,8 @@
                                 <span @click="$router.push('/write')">写博客</span>
                             </li>
                             <li>
-                                <span>登录</span>
-                                <span>注册</span>
+                                <span @click="loginFun('login')">登录</span>
+                                <span @click="loginFun('register')">注册</span>
                             </li>
                             <li> <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" /></li>
                         </ul>
@@ -26,23 +26,35 @@
             </Col>
         </Row>
         <Drawer title="Basic Drawer" placement="left" :closable="false" v-model="drawerFlag">
-            <p>Some contents...</p>
-            <p>Some contents...</p>
-            <p>Some contents...</p>
+            <left-aside v-if="false"></left-aside>
+            <reg-login :drawerType="drawerType"></reg-login>
         </Drawer>
     </header>
 </template>
 
 <script>
-    import logImg from '../../../images/logo.png'
+    import leftAside from './leftAside';
+    import regLogin from './regLogin';
+    import logImg from '../../../images/logo.png';
     export default {
-        name: "lay-header",
-        data() {
-            return {
-                logImg: logImg,
-                drawerFlag: false
-            }
+      name: "lay-header",
+      data() {
+        return {
+          logImg: logImg,
+          drawerFlag: false,
+          drawerType: ''
         }
+      },
+      components: {
+        leftAside,
+        regLogin
+      },
+      methods: {
+        loginFun(n) {
+          this.drawerType = n;
+          this.drawerFlag = true;
+        }
+      }
     }
 </script>
 
